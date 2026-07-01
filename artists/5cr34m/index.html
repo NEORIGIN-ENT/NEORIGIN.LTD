@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="5CR34M official interactive artist site by NEORIGIN." />
+    <meta name="description" content="5CR34M official artist site by NEORIGIN." />
     <title>5CR34M | NEORIGIN</title>
-    <link rel="stylesheet" href="./style.css?v=2" />
+    <link rel="stylesheet" href="./style.css?v=13" />
+    <link rel="icon" href="../../assets/neorigin-logo.PNG" />
   </head>
-  <body class="scream-lab" data-step="0">
-    <canvas class="noise-field" id="noiseField" aria-hidden="true"></canvas>
-    <div class="flash-layer" id="flashLayer" aria-hidden="true"></div>
+  <body class="scream-site" data-theme="ice">
+    <canvas class="signal-canvas" id="signalCanvas" aria-hidden="true"></canvas>
 
     <header class="site-header">
       <a class="company-mark" href="../../" aria-label="NEORIGIN">
         <img src="../../assets/neorigin-logo.PNG" alt="NEORIGIN" draggable="false" />
       </a>
-      <nav class="site-nav" aria-label="5CR34M">
-        <a href="#orders" data-i18n="navOrders">清单</a>
-        <a href="#lab" data-i18n="navLab">榨汁机</a>
-        <a href="#teaser" data-i18n="navTeaser">预告</a>
+      <nav class="site-nav" aria-label="5CR34M navigation">
+        <a href="#news" data-i18n="navNews">NEWS</a>
+        <a href="#profile" data-i18n="navProfile">PROFILE</a>
+        <a href="#media" data-i18n="navMedia">MEDIA</a>
+        <a href="#schedule" data-i18n="navSchedule">SCHEDULE</a>
       </nav>
       <div class="language-switch" aria-label="Language">
         <button class="lang-button is-active" type="button" data-lang="zh">中</button>
@@ -28,162 +29,183 @@
     </header>
 
     <main>
-      <section class="hero" id="orders" aria-labelledby="heroTitle">
-        <div class="hero-logo-wrap">
-          <img
-            class="artist-logo protected-media"
-            src="../../assets/5CR34M-LOGO-TRIM.PNG"
-            alt="5CR34M"
-            draggable="false"
-          />
-        </div>
+      <section class="hero" id="top" aria-labelledby="heroTitle">
+        <div class="hero-board" data-board>
+          <button class="logo-button protected-media" type="button" id="logoButton" aria-label="Activate 5CR34M">
+            <img src="../../assets/5CR34M-LOGO-TRIM.PNG" alt="5CR34M" draggable="false" />
+          </button>
 
-        <div class="hero-copy">
-          <p class="eyebrow" data-i18n="heroKicker">5CR34M 回归前置实验</p>
-          <h1 id="heroTitle" data-i18n="heroTitle">按清单调制三杯信号汁，解锁预告。</h1>
-          <p data-i18n="heroCopy">
-            读取墙上的神秘清单，把指定物料丢进 chrome 榨汁机。颜色正确，杯子会被点亮；颜色错误，机器会失真并要求重新开始。
-          </p>
-        </div>
-
-        <div class="order-wall" aria-label="Recipe orders">
-          <article class="order-card is-active" data-order-card="0">
-            <span>ORDER 01</span>
-            <strong data-i18n="orderOneTitle">银色静电</strong>
-            <p data-i18n="orderOneCopy">铬片 + 蓝色信号，榨成冷银色，倒入 01 号杯。</p>
-          </article>
-          <article class="order-card" data-order-card="1">
-            <span>ORDER 02</span>
-            <strong data-i18n="orderTwoTitle">紫色尖叫</strong>
-            <p data-i18n="orderTwoCopy">紫色电池 + 黑玫瑰，榨成电紫色，倒入 02 号杯。</p>
-          </article>
-          <article class="order-card" data-order-card="2">
-            <span>ORDER 03</span>
-            <strong data-i18n="orderThreeTitle">红色噪声</strong>
-            <p data-i18n="orderThreeCopy">红色果核 + 故障冰块，榨成热红色，倒入 03 号杯。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="lab-section" id="lab" aria-labelledby="labTitle">
-        <div class="lab-heading">
-          <p class="eyebrow" data-i18n="labKicker">CHROME JUICER</p>
-          <h2 id="labTitle" data-i18n="labTitle">点击两种物料装入机器，再按下榨取。</h2>
-        </div>
-
-        <div class="lab-grid">
-          <aside class="ingredient-bank" aria-label="Ingredients">
-            <button class="ingredient" type="button" data-ingredient="chrome">
-              <span class="ingredient-icon chrome-shard"></span>
-              <strong data-i18n="ingChrome">铬片</strong>
-            </button>
-            <button class="ingredient" type="button" data-ingredient="signal">
-              <span class="ingredient-icon signal-drop"></span>
-              <strong data-i18n="ingSignal">蓝色信号</strong>
-            </button>
-            <button class="ingredient" type="button" data-ingredient="violet">
-              <span class="ingredient-icon violet-cell"></span>
-              <strong data-i18n="ingViolet">紫色电池</strong>
-            </button>
-            <button class="ingredient" type="button" data-ingredient="rose">
-              <span class="ingredient-icon black-rose"></span>
-              <strong data-i18n="ingRose">黑玫瑰</strong>
-            </button>
-            <button class="ingredient" type="button" data-ingredient="redcore">
-              <span class="ingredient-icon red-core"></span>
-              <strong data-i18n="ingRedcore">红色果核</strong>
-            </button>
-            <button class="ingredient" type="button" data-ingredient="glitchice">
-              <span class="ingredient-icon glitch-ice"></span>
-              <strong data-i18n="ingGlitchice">故障冰块</strong>
-            </button>
-          </aside>
-
-          <article class="juicer-console">
-            <div class="machine-status">
-              <span id="stepLabel">ORDER 01</span>
-              <strong id="statusText" data-i18n="statusReady">等待物料</strong>
-            </div>
-
-            <div class="juicer" id="juicer" aria-label="5CR34M chrome juicer">
-              <img
-                class="machine-render protected-media"
-                src="../../assets/5cr34m-juicer-render.png"
-                alt=""
-                draggable="false"
-              />
-              <div class="drop-zone" id="dropZone">
-                <span data-i18n="dropHint">点击左侧物料装入</span>
-              </div>
-              <div class="machine-jar">
-                <div class="jar-liquid" id="jarLiquid"></div>
-                <canvas class="blend-canvas" id="blendCanvas" aria-hidden="true"></canvas>
-                <div class="ingredient-world" id="ingredientWorld" aria-hidden="true"></div>
-                <div class="blade blade-a"></div>
-                <div class="blade blade-b"></div>
-              </div>
-              <div class="pour-stream" id="pourStream" aria-hidden="true"></div>
-              <div class="machine-base">
-                <button class="blend-button" id="blendButton" type="button" data-i18n="blendButton">
-                  榨取
-                </button>
-                <button class="clear-button" id="clearButton" type="button" data-i18n="clearButton">
-                  清空
-                </button>
-              </div>
-            </div>
-
-            <div class="loaded-tray" id="loadedTray" aria-live="polite"></div>
-          </article>
-
-          <aside class="cup-rack" aria-label="Signal cups">
-            <button class="cup is-active" type="button" data-cup="0">
-              <span class="cup-bowl"><i></i></span>
-              <strong>01</strong>
-            </button>
-            <button class="cup" type="button" data-cup="1">
-              <span class="cup-bowl"><i></i></span>
-              <strong>02</strong>
-            </button>
-            <button class="cup" type="button" data-cup="2">
-              <span class="cup-bowl"><i></i></span>
-              <strong>03</strong>
-            </button>
-          </aside>
-        </div>
-      </section>
-
-      <section class="teaser-section is-locked" id="teaser" aria-labelledby="teaserTitle">
-        <div class="teaser-lock" id="teaserLock">
-          <span data-i18n="teaserLocked">三杯完成后公开</span>
-        </div>
-        <div class="teaser-content">
-          <p class="eyebrow" data-i18n="teaserKicker">RETURN SIGNAL</p>
-          <h2 id="teaserTitle" data-i18n="teaserTitle">5CR34M // 2026.??.??</h2>
-          <div class="teaser-grid">
-            <article>
-              <span>FILE A</span>
-              <strong data-i18n="teaserOne">Chrome mouth opening.</strong>
-            </article>
-            <article>
-              <span>FILE B</span>
-              <strong data-i18n="teaserTwo">Voice encoded in red juice.</strong>
-            </article>
-            <article>
-              <span>FILE C</span>
-              <strong data-i18n="teaserThree">Trailer signal pending.</strong>
-            </article>
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroKicker">SOLO ARTIST OFFICIAL SITE</p>
+            <h1 id="heroTitle" data-i18n="heroTitle">5CR34M opens a silver pop system.</h1>
+            <p data-i18n="heroCopy">
+              这里是 5CR34M 的官方入口。新闻、影像、档案和预告会像桌面小卡一样不断更新。
+            </p>
           </div>
+
+          <div class="desktop-window window-news" data-window>
+            <div class="window-bar">
+              <span>NEWS.exe</span>
+              <i></i>
+            </div>
+            <strong class="window-shout window-ready" data-i18n="windowNewsTitle">READY</strong>
+          </div>
+
+          <div class="desktop-window window-diary" data-window>
+            <div class="window-bar">
+              <span>DIARY.txt</span>
+              <i></i>
+            </div>
+            <strong data-i18n="windowDiaryTitle">DO&nbsp;NOT
+SCREAM.</strong>
+          </div>
+
+          <div class="desktop-window window-player" data-window>
+            <div class="window-bar">
+              <span>PLAYER</span>
+              <i></i>
+            </div>
+            <button class="play-chip" type="button" id="pulseButton" data-i18n="pulseButton">
+              PLAY SIGNAL
+            </button>
+            <div class="meter"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <div class="quick-dock" aria-label="Quick links">
+          <a href="#news">
+            <span>01</span>
+            <strong data-i18n="dockNews">NEWS</strong>
+          </a>
+          <a href="#profile">
+            <span>02</span>
+            <strong data-i18n="dockProfile">PROFILE</strong>
+          </a>
+          <a href="#media">
+            <span>03</span>
+            <strong data-i18n="dockMedia">MEDIA</strong>
+          </a>
+          <a href="#schedule">
+            <span>04</span>
+            <strong data-i18n="dockSchedule">SCHEDULE</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="section news-section" id="news" aria-labelledby="newsTitle">
+        <div class="section-head">
+          <p class="eyebrow">OFFICIAL BOARD</p>
+          <h2 id="newsTitle" data-i18n="newsTitle">NEWS</h2>
+        </div>
+        <div class="news-list">
+          <article>
+            <time>2026.07.01</time>
+            <strong data-i18n="newsOneTitle">5CR34M official page renewed.</strong>
+            <p data-i18n="newsOneCopy">新的官方网站系统开放，后续影像和回归信息将在这里更新。</p>
+          </article>
+          <article>
+            <time>2026.??.??</time>
+            <strong data-i18n="newsTwoTitle">Return signal pending.</strong>
+            <p data-i18n="newsTwoCopy">预告文件待公开。请保持接收状态。</p>
+          </article>
+          <article>
+            <time>OPEN</time>
+            <strong data-i18n="newsThreeTitle">Fan archive preparing.</strong>
+            <p data-i18n="newsThreeCopy">视觉档案、歌词片段和幕后记录将逐步加入。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section profile-section" id="profile" aria-labelledby="profileTitle">
+        <div class="section-head">
+          <p class="eyebrow">ARTIST FILE</p>
+          <h2 id="profileTitle" data-i18n="profileTitle">PROFILE</h2>
+        </div>
+        <div class="profile-shell">
+          <div class="profile-card">
+            <img class="protected-media profile-logo" src="../../assets/5CR34M-LOGO-TRIM.PNG" alt="" draggable="false" />
+            <dl>
+              <div>
+                <dt data-i18n="profileName">NAME</dt>
+                <dd>5CR34M</dd>
+              </div>
+              <div>
+                <dt data-i18n="profileType">TYPE</dt>
+                <dd data-i18n="profileTypeValue">SOLO ARTIST</dd>
+              </div>
+              <div>
+                <dt data-i18n="profileBase">BASE</dt>
+                <dd>NEORIGIN / ORAD</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="profile-copy">
+            <p data-i18n="profileCopy">
+              5CR34M 把金属质感、故障信号和流行旋律压进同一个声音界面。视觉语言锋利，情绪却保持冷静、轻盈和可进入。
+            </p>
+            <div class="tag-row" aria-label="Keywords">
+              <button type="button" data-tag="chrome">CHROME</button>
+              <button type="button" data-tag="signal">SIGNAL</button>
+              <button type="button" data-tag="pop">POP</button>
+              <button type="button" data-tag="glitch">GLITCH</button>
+            </div>
+            <p class="tag-output" id="tagOutput" data-i18n="tagOutput">点击关键词切换档案注释。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section media-section" id="media" aria-labelledby="mediaTitle">
+        <div class="section-head">
+          <p class="eyebrow">VISUAL ROOM</p>
+          <h2 id="mediaTitle" data-i18n="mediaTitle">MEDIA</h2>
+        </div>
+        <div class="media-grid">
+          <button class="media-card" type="button" data-media="mv">
+            <span>MOVIE</span>
+            <strong data-i18n="mediaOne">Official film slot</strong>
+          </button>
+          <button class="media-card" type="button" data-media="photo">
+            <span>PHOTO</span>
+            <strong data-i18n="mediaTwo">Chrome portrait archive</strong>
+          </button>
+          <button class="media-card" type="button" data-media="audio">
+            <span>AUDIO</span>
+            <strong data-i18n="mediaThree">Signal preview channel</strong>
+          </button>
+        </div>
+      </section>
+
+      <section class="section schedule-section" id="schedule" aria-labelledby="scheduleTitle">
+        <div class="section-head">
+          <p class="eyebrow">CALENDAR</p>
+          <h2 id="scheduleTitle" data-i18n="scheduleTitle">SCHEDULE</h2>
+        </div>
+        <div class="schedule-list">
+          <article>
+            <span>SOON</span>
+            <strong data-i18n="scheduleOne">Official teaser update</strong>
+          </article>
+          <article>
+            <span>TBA</span>
+            <strong data-i18n="scheduleTwo">Visual concept release</strong>
+          </article>
+          <article>
+            <span>TBA</span>
+            <strong data-i18n="scheduleThree">Music file open</strong>
+          </article>
         </div>
       </section>
     </main>
 
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <footer class="site-footer">
       <a href="../../#artists" data-i18n="backArtists">返回艺人页</a>
+      <nav class="social-list" id="socialList" aria-label="5CR34M social media" hidden></nav>
       <span>COPYRIGHT © 2026 NEORIGIN CO. LTD. ALL RIGHTS RESERVED.</span>
       <a href="mailto:reportorbeat@neorigin.ltd">reportorbeat@neorigin.ltd</a>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./script.js?v=13"></script>
   </body>
 </html>
