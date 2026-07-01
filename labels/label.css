@@ -1,0 +1,1601 @@
+:root {
+  --bg: #020202;
+  --surface: rgba(255, 255, 255, 0.035);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-soft: rgba(255, 255, 255, 0.075);
+  --text: #f7f4ee;
+  --muted: rgba(247, 244, 238, 0.66);
+  --soft: rgba(247, 244, 238, 0.38);
+  --accent: #f7f4ee;
+  --accent-soft: rgba(247, 244, 238, 0.16);
+  --pad: clamp(22px, 6vw, 82px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 78% 8%, var(--accent-soft), transparent 30vw),
+    linear-gradient(130deg, transparent 0 42%, rgba(255, 255, 255, 0.045) 42.1%, transparent 42.35%),
+    var(--bg);
+  color: var(--text);
+  font-family:
+    "Inter", "Helvetica Neue", Helvetica, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Noto Sans CJK SC", Arial, sans-serif;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:where(h1, h2, h3, p, a, span, strong, small, dt, dd, button) {
+  overflow-wrap: anywhere;
+}
+
+.label-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  height: 76px;
+  padding: 0 var(--pad);
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(2, 2, 2, 0.84);
+  backdrop-filter: blur(18px);
+}
+
+.label-brand {
+  width: clamp(136px, 12vw, 184px);
+  height: 36px;
+}
+
+.label-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.label-nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label-nav a:hover,
+.back-link:hover {
+  color: var(--text);
+}
+
+.back-link {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label-hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.52fr);
+  gap: clamp(36px, 7vw, 106px);
+  align-items: end;
+  padding: 146px var(--pad) 72px;
+}
+
+.kicker,
+.meta dt,
+.index-number {
+  margin: 0 0 18px;
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 780;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 26px;
+  font-size: clamp(58px, 11vw, 156px);
+  line-height: 0.82;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.hero-copy {
+  max-width: 770px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(17px, 1.7vw, 23px);
+  line-height: 1.62;
+}
+
+.meta {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.meta div {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.meta dt,
+.meta dd {
+  margin: 0;
+}
+
+.meta dd {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.section {
+  padding: clamp(76px, 9vw, 126px) var(--pad);
+  border-top: 1px solid var(--line-soft);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.24fr) 1fr;
+  gap: clamp(28px, 5vw, 74px);
+  align-items: end;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(30px, 4.6vw, 64px);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.feature-grid article {
+  min-height: 260px;
+  padding: clamp(24px, 3.6vw, 44px);
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 46%),
+    var(--surface);
+}
+
+.feature-grid article:last-child {
+  border-right: 0;
+}
+
+.index-number {
+  display: block;
+  margin-bottom: clamp(46px, 6vw, 74px);
+}
+
+.feature-grid h3 {
+  margin-bottom: 12px;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.05;
+}
+
+.feature-grid p,
+.statement p {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.statement {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) 1.25fr;
+  gap: clamp(34px, 7vw, 100px);
+}
+
+.statement p {
+  max-width: 790px;
+  margin-bottom: 0;
+  font-size: clamp(18px, 2vw, 26px);
+}
+
+.label-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px var(--pad) 46px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 720;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.theme-jelly {
+  --accent: #f1f4ff;
+  --accent-soft: rgba(165, 190, 255, 0.14);
+}
+
+.theme-orad {
+  --accent: #dffcff;
+  --accent-soft: rgba(88, 236, 255, 0.12);
+}
+
+.theme-jelly h1 {
+  font-weight: 700;
+}
+
+.theme-orad h1 {
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 860px) {
+  .label-header {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    min-height: 76px;
+    padding-block: 16px;
+  }
+
+  .label-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .label-hero,
+  .section-head,
+  .feature-grid,
+  .statement {
+    grid-template-columns: 1fr;
+  }
+
+  .label-hero {
+    padding-top: 138px;
+  }
+
+  h1 {
+    font-size: clamp(48px, 15vw, 82px);
+  }
+
+  .feature-grid article {
+    min-height: auto;
+    border-right: 0;
+  }
+
+  .meta div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .label-footer {
+    flex-direction: column;
+  }
+}
+
+.orad-site {
+  --orad-paper: #f2f2ef;
+  --orad-ink: #070707;
+  --orad-line: rgba(7, 7, 7, 0.18);
+  --orad-soft-line: rgba(7, 7, 7, 0.08);
+  --orad-red: #b40015;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(7, 7, 7, 0.035) 1px, transparent 1px) 0 0 / 9.09vw 100%,
+    var(--orad-paper);
+  color: var(--orad-ink);
+}
+
+.orad-site::selection {
+  background: var(--orad-ink);
+  color: var(--orad-paper);
+}
+
+.orad-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  min-height: 62px;
+  padding: 18px clamp(18px, 3vw, 40px);
+  mix-blend-mode: multiply;
+}
+
+.orad-mark {
+  display: block;
+  width: clamp(116px, 10vw, 168px);
+  height: 28px;
+  filter: invert(1);
+}
+
+.orad-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.orad-langs,
+.orad-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.65vw, 22px);
+  font-size: clamp(12px, 1.15vw, 18px);
+  font-weight: 940;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.orad-langs {
+  justify-self: center;
+}
+
+.orad-nav {
+  justify-self: end;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.orad-langs a,
+.orad-nav a,
+.orad-footer a {
+  position: relative;
+}
+
+.orad-langs a::after,
+.orad-nav a::after,
+.orad-footer a::after {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.orad-langs a:hover::after,
+.orad-nav a:hover::after,
+.orad-footer a:hover::after {
+  transform: scaleX(1);
+}
+
+.orad-hero {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  padding: clamp(82px, 9vw, 128px) clamp(18px, 3vw, 40px) clamp(28px, 4vw, 56px);
+  border-bottom: 1px solid var(--orad-line);
+  background:
+    radial-gradient(circle at 52% 34%, rgba(255, 255, 255, 0.76), transparent 27vw),
+    linear-gradient(180deg, #a3a3a0 0 58%, var(--orad-paper) 58.1%);
+}
+
+.orad-hero::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(7, 7, 7, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 7, 7, 0.08) 1px, transparent 1px);
+  background-size: 100% 14.285%, 12.5% 100%;
+  content: "";
+  opacity: 0.2;
+}
+
+.orad-hero-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-self: start;
+  color: rgba(7, 7, 7, 0.58);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+}
+
+.orad-title-wrap {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+}
+
+.orad-kicker {
+  margin: 0 0 18px;
+  color: rgba(7, 7, 7, 0.62);
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.orad-title-wrap h1 {
+  margin: 0;
+  font-family:
+    Impact, Haettenschweiler, "Arial Black", "Inter", "Helvetica Neue",
+    "PingFang SC", sans-serif;
+  font-size: clamp(96px, 24vw, 340px);
+  font-weight: 950;
+  line-height: 0.72;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.orad-hero-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 5vw, 78px);
+  align-self: end;
+  max-width: 980px;
+}
+
+.orad-hero-copy p {
+  margin: 0;
+  font-size: clamp(16px, 1.55vw, 23px);
+  font-weight: 660;
+  line-height: 1.55;
+}
+
+.orad {
+  padding: clamp(58px, 7vw, 104px) clamp(18px, 3vw, 40px);
+}
+
+.manifesto {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 7vw, 110px);
+  border-bottom: 1px solid var(--orad-line);
+  background: var(--orad-paper);
+}
+
+.manifesto-index,
+.orad-info span,
+.orad-language-grid span,
+.orad-contact p {
+  color: rgba(7, 7, 7, 0.54);
+  font-size: 10px;
+  font-weight: 880;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.manifesto p {
+  max-width: 1100px;
+  margin: 0;
+  font-size: clamp(36px, 6.4vw, 104px);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.orad-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--orad-line);
+}
+
+.orad-info article {
+  display: grid;
+  min-height: clamp(330px, 38vw, 560px);
+  padding: clamp(26px, 3.2vw, 48px);
+  border-right: 1px solid var(--orad-soft-line);
+  background:
+    linear-gradient(180deg, transparent 0 66%, rgba(7, 7, 7, 0.035) 66.1%),
+    var(--orad-paper);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.orad-info article:last-child {
+  border-right: 0;
+}
+
+.orad-info article:hover {
+  background: var(--orad-ink);
+  color: var(--orad-paper);
+  transform: translateY(-8px);
+}
+
+.orad-info article:hover span,
+.orad-info article:hover p {
+  color: rgba(242, 242, 239, 0.7);
+}
+
+.orad-info h2 {
+  align-self: end;
+  margin: 0 0 24px;
+  font-size: clamp(34px, 5.6vw, 90px);
+  font-weight: 920;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.orad-info p {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(7, 7, 7, 0.68);
+  font-size: 15px;
+  font-weight: 560;
+  line-height: 1.72;
+}
+
+.orad-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--orad-line);
+}
+
+.orad-language-grid div {
+  min-height: 280px;
+  padding: clamp(30px, 4vw, 58px);
+  border-right: 1px solid var(--orad-soft-line);
+}
+
+.orad-language-grid div:last-child {
+  border-right: 0;
+}
+
+.orad-language-grid p {
+  max-width: 700px;
+  margin: clamp(50px, 7vw, 94px) 0 0;
+  font-size: clamp(22px, 3vw, 46px);
+  font-weight: 820;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.orad-contact {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: clamp(22px, 6vw, 86px);
+  padding: clamp(54px, 7vw, 100px) clamp(18px, 3vw, 40px);
+  border-bottom: 1px solid var(--orad-line);
+}
+
+.orad-contact p {
+  margin: 0;
+}
+
+.orad-contact a {
+  width: min-content;
+  color: var(--orad-red);
+  font-size: clamp(32px, 7vw, 112px);
+  font-weight: 940;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+  overflow-wrap: anywhere;
+}
+
+.orad-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(18px, 3vw, 40px) 36px;
+  color: rgba(7, 7, 7, 0.66);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+@media (max-width: 860px) {
+  .orad-header {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    min-height: 58px;
+  }
+
+  .orad-langs {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .orad-nav {
+    gap: 12px;
+  }
+
+  .orad-hero {
+    min-height: 92svh;
+    padding-top: 108px;
+  }
+
+  .orad-title-wrap h1 {
+    font-size: clamp(88px, 30vw, 180px);
+    letter-spacing: -0.085em;
+  }
+
+  .orad-hero-copy,
+  .manifesto,
+  .orad-info,
+  .orad-language-grid,
+  .orad-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .orad-info article,
+  .orad-language-grid div {
+    border-right: 0;
+    border-bottom: 1px solid var(--orad-soft-line);
+  }
+
+  .orad-info article {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .orad-mark {
+    width: 118px;
+  }
+
+  .orad-nav {
+    font-size: 10px;
+  }
+
+  .orad-hero-top {
+    flex-direction: column;
+  }
+
+  .orad-hero-copy p {
+    font-size: 15px;
+  }
+
+  .manifesto p {
+    font-size: clamp(34px, 13vw, 62px);
+  }
+
+  .orad-contact a {
+    font-size: clamp(30px, 12vw, 62px);
+  }
+
+  .orad-footer {
+    flex-direction: column;
+  }
+}
+
+/* ORAD interactive site, inspired by the structure of immersive label homepages. */
+.orad-site {
+  overflow: hidden;
+  background: #f4f4f0;
+  color: #050505;
+  font-family:
+    "Arial Black", Impact, "Inter", "Helvetica Neue", "PingFang SC",
+    "Noto Sans CJK SC", Arial, sans-serif;
+  font-weight: 900;
+}
+
+.orad-site button {
+  font: inherit;
+}
+
+.orad-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: flex-start;
+  padding: clamp(12px, 2.2vw, 30px) clamp(14px, 2.6vw, 32px);
+  pointer-events: none;
+}
+
+.orad-primary,
+.orad-langs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.orad-primary {
+  justify-self: start;
+}
+
+.orad-langs {
+  justify-self: end;
+}
+
+.orad-primary button,
+.orad-langs button {
+  height: 38px;
+  padding: 0 13px;
+  border: 3px solid #050505;
+  border-radius: 999px;
+  background: #fff;
+  color: #5f5f5f;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.orad-langs button {
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #050505;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.orad-primary button:hover,
+.orad-primary button.is-active {
+  background: #050505;
+  color: #fff;
+}
+
+.orad-langs button.is-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.orad-primary button:active,
+.orad-langs button:active {
+  transform: scale(0.94);
+}
+
+.orad-stage {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.orad-scene,
+#oradCanvas {
+  position: absolute;
+  inset: 0;
+}
+
+.orad-scene {
+  z-index: 1;
+  overflow: hidden;
+  transition:
+    height 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    top 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#oradCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  touch-action: none;
+}
+
+.orad-mode-home #oradCanvas {
+  cursor: grab;
+}
+
+.orad-mode-home #oradCanvas:active {
+  cursor: grabbing;
+}
+
+.orad-hotspots {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  pointer-events: none;
+}
+
+.orad-hotspots button {
+  position: absolute;
+  height: 40px;
+  min-width: 88px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  color: #050505;
+  box-shadow: 0 0 0 2px rgba(5, 5, 5, 0.08);
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.orad-hotspots button:nth-child(1) {
+  left: 16.8%;
+  top: 49%;
+}
+
+.orad-hotspots button:nth-child(2) {
+  left: 43%;
+  top: 44%;
+}
+
+.orad-hotspots button:nth-child(3) {
+  left: 71%;
+  top: 35%;
+}
+
+.orad-hotspots button:hover {
+  background: #050505;
+  color: #fff;
+}
+
+.orad-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: none;
+  pointer-events: none;
+}
+
+.orad-panel.is-active {
+  display: block;
+}
+
+.orad-panel.is-active > * {
+  min-width: 0;
+}
+
+.orad-mode-home .orad-panel[data-panel="home"] {
+  pointer-events: none;
+}
+
+.orad-mode-home .orad-primary button[data-view="home"] {
+  display: none;
+}
+
+.orad-mode-home .orad-scene {
+  height: 100%;
+  top: 0;
+}
+
+.orad-mode-home .orad-hotspots {
+  display: none;
+}
+
+.orad-mode-about .orad-scene,
+.orad-mode-system .orad-scene,
+.orad-mode-signal .orad-scene {
+  top: calc(100dvh - 186px);
+  height: 186px;
+}
+
+.orad-mode-about .orad-hotspots,
+.orad-mode-system .orad-hotspots,
+.orad-mode-signal .orad-hotspots {
+  display: none;
+}
+
+.orad-site.is-clue-blast .orad-scene {
+  top: 0;
+  height: 100%;
+  z-index: 9;
+  pointer-events: none;
+  transition: none;
+  contain: layout paint;
+}
+
+.orad-site.is-clue-blast .orad-panel[data-panel="signal"] {
+  z-index: 8;
+}
+
+.orad-home-copy {
+  position: absolute;
+  right: clamp(18px, 3vw, 36px);
+  top: 104px;
+  bottom: auto;
+  left: clamp(18px, 3vw, 36px);
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.orad-home-copy p {
+  max-width: min(440px, 100%);
+  margin: 0;
+  color: #050505;
+  font-family:
+    "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  font-size: clamp(13px, 1.25vw, 17px);
+  font-weight: 850;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: right;
+  padding: 14px 16px;
+  border: 2px solid rgba(5, 5, 5, 0.12);
+  border-radius: 14px;
+  background: rgba(244, 244, 240, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.orad-split,
+.orad-system,
+.orad-signal {
+  position: absolute;
+  inset: 98px 32px 186px;
+  pointer-events: auto;
+  min-width: 0;
+}
+
+.orad-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.58fr) minmax(360px, 0.42fr);
+  gap: 58px;
+  align-items: start;
+}
+
+.orad-profile-card {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: min(54vh, 420px);
+  padding: clamp(22px, 3vw, 36px);
+  border: 3px solid #050505;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.orad-profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: -1;
+  border: 1px solid rgba(5, 5, 5, 0.16);
+  border-radius: 12px;
+}
+
+.orad-profile-card::after {
+  content: "";
+  position: absolute;
+  right: -18%;
+  bottom: -22%;
+  z-index: -1;
+  width: 52%;
+  aspect-ratio: 1;
+  border: 3px solid rgba(5, 5, 5, 0.18);
+  border-radius: 50%;
+  box-shadow:
+    -54px -34px 0 rgba(5, 5, 5, 0.045),
+    -104px 28px 0 rgba(5, 5, 5, 0.034);
+}
+
+.orad-profile-meta {
+  display: grid;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.orad-profile-meta > span,
+.orad-profile-card small {
+  color: rgba(5, 5, 5, 0.58);
+  font-family:
+    "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.orad-profile-card strong {
+  max-width: 580px;
+  font-size: clamp(52px, 8vw, 128px);
+  line-height: 0.82;
+  letter-spacing: -0.065em;
+}
+
+.orad-profile-card small {
+  max-width: 420px;
+  color: #050505;
+  font-size: clamp(20px, 2.1vw, 32px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.orad-text-stack p {
+  margin: 0;
+  font-size: clamp(30px, 4.8vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+}
+
+.orad-system {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
+  gap: 18px;
+}
+
+.orad-system-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.orad-system-list button {
+  display: grid;
+  align-content: space-between;
+  min-height: 116px;
+  padding: 18px;
+  border: 3px solid #050505;
+  border-radius: 18px;
+  background: #fff;
+  color: #050505;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.orad-system-list button:hover,
+.orad-system-list button.is-active {
+  background: #050505;
+  color: #fff;
+  transform: translateX(8px);
+}
+
+.orad-system-list span {
+  font-size: 18px;
+}
+
+.orad-system-list strong {
+  max-width: 360px;
+  font-size: clamp(28px, 4vw, 58px);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.orad-system-detail {
+  position: relative;
+  min-height: 100%;
+  border: 3px solid #050505;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(232, 241, 238, 0.76)),
+    repeating-linear-gradient(90deg, rgba(5, 5, 5, 0.04) 0 1px, transparent 1px 34px);
+  overflow: hidden;
+}
+
+.orad-system-detail::after {
+  content: "ORAD";
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.22em;
+  color: rgba(5, 5, 5, 0.045);
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(140px, 23vw, 360px);
+  line-height: 0.8;
+  letter-spacing: -0.12em;
+}
+
+.orad-system-detail article {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  align-content: space-between;
+  gap: 24px;
+  padding: clamp(22px, 4vw, 46px);
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.orad-system-detail article.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.orad-system-detail span {
+  color: rgba(5, 5, 5, 0.48);
+  font-family:
+    "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.orad-system-detail h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(36px, 5.2vw, 88px);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.orad-system-detail p {
+  max-width: 620px;
+  margin: 0;
+  font-family:
+    "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  font-size: 15px;
+  font-weight: 820;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.orad-signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px 160px;
+  gap: clamp(28px, 6vw, 82px);
+  align-items: center;
+  z-index: 6;
+}
+
+.signal-title {
+  margin: 0 0 14px;
+  font-size: clamp(54px, 11vw, 150px);
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+}
+
+.signal-copy {
+  max-width: 620px;
+  margin: 0;
+  font-family:
+    "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.signal-meter {
+  position: relative;
+  --signal-progress: 0;
+  width: 32px;
+  height: min(48vh, 320px);
+  border: 4px solid #050505;
+  border-radius: 8px;
+  background: #e8e8e8;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.signal-meter span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: #050505;
+  transform: scaleY(var(--signal-progress));
+  transform-origin: bottom;
+  transition: transform 110ms ease;
+}
+
+.signal-readout {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  font-size: 14px;
+}
+
+.signal-readout strong {
+  max-width: 150px;
+  color: #050505;
+  font-size: 20px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.orad-footer {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0 8px;
+  padding: 6px 16px;
+  border-top: 3px solid #050505;
+  background: #fff;
+  color: #050505;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.orad-footer span,
+.orad-footer a {
+  margin-right: 0;
+}
+
+.orad-footer a {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .orad-stage {
+    min-height: 100dvh;
+  }
+
+  .orad-header {
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+    padding: 7px 6px;
+  }
+
+  .orad-primary,
+  .orad-langs {
+    flex-wrap: wrap;
+  }
+
+  .orad-primary {
+    grid-column: 1 / 2;
+    margin-bottom: 8px;
+  }
+
+  .orad-langs {
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+
+  .orad-primary button {
+    height: 38px;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  .orad-langs button {
+    padding-right: 12px;
+    font-size: 16px;
+  }
+
+  .orad-hotspots button:nth-child(1) {
+    left: 2%;
+    top: 48%;
+  }
+
+  .orad-hotspots button:nth-child(2) {
+    left: 29%;
+    top: 47%;
+  }
+
+  .orad-hotspots button:nth-child(3) {
+    left: 66%;
+    top: 43%;
+  }
+
+  .orad-mode-about .orad-scene,
+  .orad-mode-system .orad-scene,
+  .orad-mode-signal .orad-scene {
+    top: calc(100dvh - 228px);
+    height: 156px;
+  }
+
+  .orad-home-copy {
+    top: 92px;
+    bottom: auto;
+    justify-content: flex-start;
+  }
+
+  .orad-home-copy p {
+    max-width: 310px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .orad-split,
+  .orad-system,
+  .orad-signal {
+    inset: 112px 16px 228px;
+  }
+
+  .orad-split,
+  .orad-signal {
+    grid-template-columns: 1fr;
+  }
+
+  .orad-system {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    padding-bottom: 8px;
+  }
+
+  .orad-system-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .orad-system-list button {
+    min-height: 104px;
+  }
+
+  .orad-system-list strong {
+    font-size: clamp(23px, 8vw, 38px);
+  }
+
+  .orad-system-detail {
+    min-height: 340px;
+  }
+
+  .orad-split {
+    gap: 24px;
+  }
+
+  .orad-profile-card {
+    min-height: 180px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .orad-profile-card strong {
+    font-size: clamp(34px, 12vw, 54px);
+  }
+
+  .orad-text-stack p {
+    font-size: clamp(30px, 10vw, 46px);
+  }
+
+  .orad-signal {
+    gap: 18px;
+    align-content: start;
+  }
+
+  .signal-title {
+    font-size: clamp(52px, 16vw, 72px);
+  }
+
+  .signal-meter {
+    width: 100%;
+    height: 28px;
+  }
+
+  .signal-meter span {
+    right: auto;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(var(--signal-progress));
+    transform-origin: left;
+  }
+
+  .orad-footer {
+    display: block;
+    min-height: 72px;
+    padding: 7px 16px;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 761px) {
+  .orad-split,
+  .orad-system {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+  .orad-system-detail {
+    min-height: 360px;
+  }
+
+  .orad-signal {
+    grid-template-columns: minmax(0, 1fr) 48px 140px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .label-header {
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .label-brand {
+    width: 122px;
+  }
+
+  .label-nav {
+    gap: 18px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  .label-hero {
+    min-height: auto;
+    padding: 128px 16px 56px;
+  }
+
+  .section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .orad-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .orad-langs {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .orad-primary button {
+    height: 34px;
+    padding: 0 8px;
+    border-width: 2px;
+    font-size: 14px;
+  }
+
+  .orad-langs button {
+    font-size: 14px;
+  }
+
+  .orad-home-copy {
+    right: 12px;
+    left: 12px;
+  }
+
+  .orad-home-copy p {
+    max-width: 100%;
+  }
+
+  .orad-split,
+  .orad-system,
+  .orad-signal {
+    inset: 128px 12px 190px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .orad-mode-about .orad-scene,
+  .orad-mode-system .orad-scene,
+  .orad-mode-signal .orad-scene {
+    top: calc(100dvh - 170px);
+    height: 104px;
+  }
+
+  .orad-system-list {
+    grid-template-columns: 1fr;
+  }
+
+  .orad-system-list button {
+    min-height: 86px;
+    padding: 14px;
+    border-width: 2px;
+  }
+
+  .orad-system-detail {
+    min-height: 300px;
+    border-width: 2px;
+  }
+
+  .orad-profile-card {
+    border-width: 2px;
+  }
+
+  .signal-readout {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .signal-readout strong {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .orad-footer {
+    min-height: 58px;
+    padding: 6px 12px;
+    font-size: 9px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-height: 680px) and (min-width: 761px) {
+  .label-hero {
+    min-height: auto;
+    padding-top: 112px;
+  }
+
+  .orad-stage {
+    min-height: 100dvh;
+  }
+
+  .orad-split,
+  .orad-system,
+  .orad-signal {
+    inset: 82px 28px 128px;
+    overflow-y: auto;
+  }
+
+  .orad-mode-about .orad-scene,
+  .orad-mode-system .orad-scene,
+  .orad-mode-signal .orad-scene {
+    top: calc(100dvh - 128px);
+    height: 100px;
+  }
+
+  .orad-profile-card {
+    min-height: 260px;
+  }
+
+  .orad-system-list button {
+    min-height: 92px;
+  }
+
+  .orad-system-detail {
+    min-height: 320px;
+  }
+
+  .signal-title {
+    font-size: clamp(46px, 8vw, 100px);
+  }
+}

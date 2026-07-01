@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ORAD is a NEORIGIN label for sound, visual direction, and culture technology."
+    />
+    <title>ORAD | NEORIGIN</title>
+    <link rel="stylesheet" href="../label.css?v=18" />
+  </head>
+  <body class="theme-orad orad-site orad-mode-home">
+    <header class="orad-header" aria-label="ORAD navigation">
+      <nav class="orad-primary" aria-label="Pages">
+        <button class="is-active" type="button" data-view="home">HOME</button>
+        <button type="button" data-view="about">ABOUT</button>
+        <button type="button" data-view="system">SYSTEM</button>
+        <button type="button" data-view="signal">SIGNAL</button>
+      </nav>
+      <nav class="orad-langs" aria-label="Language">
+        <button class="is-active" type="button" data-lang="zh">CHN</button>
+        <button type="button" data-lang="en">ENG</button>
+        <button type="button" data-lang="ko">KOR</button>
+      </nav>
+    </header>
+
+    <main class="orad-stage" aria-live="polite">
+      <section class="orad-scene" aria-label="ORAD interactive scene">
+        <canvas id="oradCanvas"></canvas>
+        <div class="orad-hotspots" aria-hidden="true">
+          <button type="button" data-view="about">About</button>
+          <button type="button" data-view="system">System</button>
+          <button type="button" data-view="signal">Signal</button>
+        </div>
+      </section>
+
+      <section class="orad-panel is-active" data-panel="home">
+        <div class="orad-home-copy">
+          <p data-copy="zh">
+            ORAD 是 NEORIGIN 旗下的声音与视觉实验厂牌。拖动四个字母，或按空格让它们膨胀。
+          </p>
+          <p data-copy="en" hidden>
+            ORAD is NEORIGIN's sound and visual experiment label. Drag the four letters, or press space to inflate them.
+          </p>
+          <p data-copy="ko" hidden>
+            ORAD는 NEORIGIN의 사운드 및 비주얼 실험 레이블입니다. 네 글자를 드래그하거나 스페이스바로 부풀려 보세요.
+          </p>
+        </div>
+      </section>
+
+      <section class="orad-panel" data-panel="about">
+        <div class="orad-split">
+          <div class="orad-profile-card">
+            <div class="orad-profile-meta">
+              <span>厂牌标语 / SLOGAN</span>
+              <strong>One Ride.<br />All Drift.</strong>
+              <small data-copy="zh">新启万象，万物流转。</small>
+              <small data-copy="en" hidden>One motion, every signal drifting.</small>
+              <small data-copy="ko" hidden>하나의 질주, 모든 신호의 드리프트.</small>
+            </div>
+          </div>
+          <div class="orad-text-stack">
+            <p data-copy="zh">
+              ORAD 是 NEORIGIN 旗下偏向声音、视觉与交互实验的厂牌。
+            </p>
+            <p data-copy="en" hidden>
+              ORAD is NEORIGIN's label for sound, visual, and interaction experiments.
+            </p>
+            <p data-copy="ko" hidden>
+              ORAD는 NEORIGIN의 사운드, 비주얼, 인터랙션 실험 레이블입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="orad-panel" data-panel="system">
+        <div class="orad-system">
+          <div class="orad-system-list" aria-label="ORAD system modules">
+            <button class="is-active" type="button" data-system="sound">
+              <span>01</span>
+              <strong data-copy="zh">声音引擎</strong>
+              <strong data-copy="en" hidden>Sound Engine</strong>
+              <strong data-copy="ko" hidden>사운드 엔진</strong>
+            </button>
+            <button type="button" data-system="visual">
+              <span>02</span>
+              <strong data-copy="zh">视觉轨道</strong>
+              <strong data-copy="en" hidden>Visual Route</strong>
+              <strong data-copy="ko" hidden>비주얼 루트</strong>
+            </button>
+            <button type="button" data-system="live">
+              <span>03</span>
+              <strong data-copy="zh">现场信号</strong>
+              <strong data-copy="en" hidden>Live Signal</strong>
+              <strong data-copy="ko" hidden>라이브 신호</strong>
+            </button>
+            <button type="button" data-system="archive">
+              <span>04</span>
+              <strong data-copy="zh">档案输出</strong>
+              <strong data-copy="en" hidden>Archive Output</strong>
+              <strong data-copy="ko" hidden>아카이브 출력</strong>
+            </button>
+          </div>
+          <div class="orad-system-detail">
+            <article class="is-active" data-system-detail="sound">
+              <span>MODULE 01</span>
+              <h2 data-copy="zh">把 demo、噪声、节奏和人声先做成一套可变形的声音系统。</h2>
+              <h2 data-copy="en" hidden>Turning demos, noise, rhythm, and voice into a mutable sound system.</h2>
+              <h2 data-copy="ko" hidden>데모, 노이즈, 리듬, 보컬을 변형 가능한 사운드 시스템으로 만듭니다.</h2>
+              <p data-copy="zh">用于企划前期的声音方向测试、艺人概念探索与发行前的听感校准。</p>
+              <p data-copy="en" hidden>Used for early sound direction tests, artist concept exploration, and pre-release listening calibration.</p>
+              <p data-copy="ko" hidden>초기 사운드 방향 테스트, 아티스트 콘셉트 탐색, 발매 전 청감 조율에 사용됩니다.</p>
+            </article>
+            <article data-system-detail="visual">
+              <span>MODULE 02</span>
+              <h2 data-copy="zh">让 logo、影像、字体、舞台和网页互动保持同一个世界观。</h2>
+              <h2 data-copy="en" hidden>Keeping logo, film, type, stage, and web interaction inside one world.</h2>
+              <h2 data-copy="ko" hidden>로고, 영상, 타이포, 무대, 웹 인터랙션을 하나의 세계관 안에 둡니다.</h2>
+              <p data-copy="zh">负责视觉规则、物料延展、回归页面和动态预告的整体方向。</p>
+              <p data-copy="en" hidden>Directs visual rules, asset expansion, comeback pages, and motion teasers.</p>
+              <p data-copy="ko" hidden>비주얼 규칙, 에셋 확장, 컴백 페이지, 모션 티저의 방향을 잡습니다.</p>
+            </article>
+            <article data-system-detail="live">
+              <span>MODULE 03</span>
+              <h2 data-copy="zh">把线上互动、现场灯光、音频触发和粉丝线索连接成一次体验。</h2>
+              <h2 data-copy="en" hidden>Connecting web interaction, live lighting, audio triggers, and fan clues.</h2>
+              <h2 data-copy="ko" hidden>웹 인터랙션, 라이브 조명, 오디오 트리거, 팬 단서를 하나로 연결합니다.</h2>
+              <p data-copy="zh">用于演出、预热、隐藏线索和限时解锁机制。</p>
+              <p data-copy="en" hidden>Designed for shows, preheats, hidden clues, and time-limited unlocks.</p>
+              <p data-copy="ko" hidden>공연, 프리히트, 숨겨진 단서, 기간 한정 언락에 쓰입니다.</p>
+            </article>
+            <article data-system-detail="archive">
+              <span>MODULE 04</span>
+              <h2 data-copy="zh">把企划过程保存成可继续生长的档案，而不是一次性宣传物。</h2>
+              <h2 data-copy="en" hidden>Saving each project as a growing archive, not disposable promotion.</h2>
+              <h2 data-copy="ko" hidden>프로젝트를 일회성 홍보물이 아닌 계속 자라는 아카이브로 저장합니다.</h2>
+              <p data-copy="zh">适合后续纪录片、展览、网页资料库和实体发行延展。</p>
+              <p data-copy="en" hidden>Built for documentaries, exhibitions, web databases, and physical releases.</p>
+              <p data-copy="ko" hidden>다큐멘터리, 전시, 웹 데이터베이스, 피지컬 릴리스 확장에 적합합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="orad-panel" data-panel="signal">
+        <div class="orad-signal">
+          <div>
+            <p class="signal-title" data-copy="zh">信号测试 / SIGNAL</p>
+            <p class="signal-title" data-copy="en" hidden>SIGNAL TEST</p>
+            <p class="signal-title" data-copy="ko" hidden>신호 테스트</p>
+            <p class="signal-copy" data-copy="zh">点击画面或按空格制造脉冲。完成 50 次信号输入，线索会从 ORAD 里炸出来。</p>
+            <p class="signal-copy" data-copy="en" hidden>Click the scene or press space to create pulses. Complete 50 inputs and the clue detonates from ORAD.</p>
+            <p class="signal-copy" data-copy="ko" hidden>화면을 클릭하거나 스페이스바를 눌러 50회의 신호를 완성하면 단서가 ORAD에서 폭발합니다.</p>
+          </div>
+          <div class="signal-meter" aria-label="Signal meter">
+            <span id="signalFill"></span>
+          </div>
+          <div class="signal-readout">
+            <span id="signalCount">0 / 50</span>
+            <strong id="signalHint">LOCKED</strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="orad-footer">
+      <span>COPYRIGHT © 2026 NEORIGIN CO. LTD. ALL RIGHTS RESERVED.</span>
+      <span>REPORTORBEAT@NEORIGIN.LTD</span>
+      <a href="../../">NEORIGIN HOME</a>
+      <a href="../jellyrecords/">JELLYRECORDS</a>
+    </footer>
+
+    <script src="./orad.js?v=22"></script>
+  </body>
+</html>
